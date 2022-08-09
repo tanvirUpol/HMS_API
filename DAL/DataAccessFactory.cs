@@ -17,5 +17,9 @@ namespace DAL
         {
             return new AdminRepo(db);
         }
+        public static IRepo<Staff, int, bool> GetStaffDataAccess()
+        {
+            return new StaffRepo(db);
+        }
     }
 }
