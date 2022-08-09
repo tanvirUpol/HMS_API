@@ -19,27 +19,46 @@ namespace DAL.Repo
 
         public bool Create(Staff obj)
         {
-            throw new NotImplementedException();
+            db.Staffs.Add(obj);
+            var res = db.SaveChanges();
+            if (res != 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            db.Staffs.Remove(Get(id));
+            db.SaveChanges();
+            return true;
         }
 
         public List<Staff> Get()
         {
-            throw new NotImplementedException();
+            {
+                return db.Staffs.ToList();
+            }
         }
 
         public Staff Get(int id)
         {
-            throw new NotImplementedException();
+            {
+                return db.Staffs.SingleOrDefault(s => s.Id == id);
+            }
         }
 
         public bool Update(Staff obj)
         {
-            throw new NotImplementedException();
+            var exst = db.Staffs.FirstOrDefault(s => s.Id == obj.Id);
+            if (exst != null)
+            {
+                db.Entry(exst).CurrentValues.SetValues(obj);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }
