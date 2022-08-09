@@ -21,5 +21,13 @@ namespace DAL
         {
             return new StaffRepo(db);
         }
+
+        public static IRepo<StaffTask, int, bool> GetStaffTaskDataAccess()
+        {
+            return new StaffTaskRepo(db);
+        }
+
+
+
     }
 }
