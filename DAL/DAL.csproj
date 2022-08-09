@@ -107,6 +107,7 @@
     <Compile Include="Interfces\IRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\AdminRepo.cs" />
+    <Compile Include="Repo\MemberRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="EF\HMSModel.Context.tt">
