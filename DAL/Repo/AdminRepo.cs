@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DAL.Repo
 {
     public class AdminRepo : IRepo<Admin, int, bool>
@@ -16,7 +17,7 @@ namespace DAL.Repo
         {
             this.db = db;
         }
-    
+        //this is create
         public bool Create(Admin obj)
         {
             db.Admins.Add(obj);
