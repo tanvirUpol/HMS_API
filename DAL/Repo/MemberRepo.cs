@@ -17,29 +17,45 @@ namespace DAL.Repo
         {
             this.db = db;
         }
-        public bool Create(Member obj)
+        public bool Create(Member m)
         {
-            throw new NotImplementedException();
+            db.Members.Add(m);
+            var data=db.SaveChanges();
+
+            if (data!= 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var m = db.Members.FirstOrDefault(db => db.Id == id);
+            db.Members.Remove(m);
+            return true;
         }
 
         public List<Member> Get()
         {
-            throw new NotImplementedException();
+            return db.Members.ToList();
         }
 
         public Member Get(int id)
         {
-            throw new NotImplementedException();
+            return db.Members.FirstOrDefault(m => m.Id == id);
         }
 
         public bool Update(Member obj)
         {
-            throw new NotImplementedException();
+            var data = db.Members.FirstOrDefault(m => m.Id == obj.Id);
+                 if (data != null)
+            {
+                db.Entry(data).CurrentValues.SetValues(obj);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }
