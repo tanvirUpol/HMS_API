@@ -107,6 +107,7 @@
     <Compile Include="Interfces\IRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\AdminRepo.cs" />
+    <Compile Include="Repo\HomeNoticeRepo.cs" />
     <Compile Include="Repo\MealInfoRepo.cs" />
     <Compile Include="Repo\MemberRepo.cs" />
     <Compile Include="Repo\RequestServiceRepo.cs" />

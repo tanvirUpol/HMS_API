@@ -43,5 +43,10 @@ namespace DAL
             return new RequestServiceRepo(db);
         }
 
+        public static IRepo<HomeNotice, int, bool> GetHomeNoticeDataAccess()
+        {
+            return new HomeNoticeRepo(db);
+        }
+
     }
 }
