@@ -111,6 +111,7 @@
     <Compile Include="Repo\MemberRepo.cs" />
     <Compile Include="Repo\RequestServiceRepo.cs" />
     <Compile Include="Repo\StaffRepo.cs" />
+    <Compile Include="Repo\StaffTaskRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="EF\HMSModel.Context.tt">
