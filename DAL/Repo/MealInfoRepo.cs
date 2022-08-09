@@ -8,48 +8,49 @@ using System.Threading.Tasks;
 
 namespace DAL.Repo
 {
-    public class MemberRepo : IRepo<Member, int, bool>
+    public class MealInfoRepo : IRepo<MealInfo, int, bool>
     {
 
         HMS_APIEntities db = new HMS_APIEntities();
 
-        public MemberRepo(HMS_APIEntities db)
+        public MealInfoRepo(HMS_APIEntities db)
         {
             this.db = db;
         }
-        public bool Create(Member m)
+        public bool Create(MealInfo obj)
         {
-            db.Members.Add(m);
-            var data=db.SaveChanges();
+            db.MealInfos.Add(obj);
+            var data = db.SaveChanges();
 
-            if (data!= 0)
+            if (data != 0)
             {
                 return true;
             }
             return false;
+
         }
 
         public bool Delete(int id)
         {
-            var m = db.Members.FirstOrDefault(db => db.Id == id);
-            db.Members.Remove(m);
+            var m = db.MealInfos.FirstOrDefault(db => db.Id == id);
+            db.MealInfos.Remove(m);
             return true;
         }
 
-        public List<Member> Get()
+        public List<MealInfo> Get()
         {
-            return db.Members.ToList();
+            return db.MealInfos.ToList();
         }
 
-        public Member Get(int id)
+        public MealInfo Get(int id)
         {
-            return db.Members.FirstOrDefault(m => m.Id == id);
+            return db.MealInfos.FirstOrDefault(m => m.Id == id);
         }
 
-        public bool Update(Member obj)
+        public bool Update(MealInfo obj)
         {
-            var data = db.Members.FirstOrDefault(m => m.Id == obj.Id);
-                 if (data != null)
+            var data = db.MealInfos.FirstOrDefault(m => m.Id == obj.Id);
+            if (data != null)
             {
                 db.Entry(data).CurrentValues.SetValues(obj);
                 db.SaveChanges();
