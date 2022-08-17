@@ -31,8 +31,13 @@ namespace DAL.Repo
 
         public bool Delete(int id)
         {
-            var m = db.Members.FirstOrDefault(db => db.Id == id);
-            db.Members.Remove(m);
+            //var m = db.Members.FirstOrDefault(db => db.Id == id);
+            //db.Members.Remove(m);
+            //return true;
+
+
+            db.Members.Remove(Get(id));
+            db.SaveChanges();
             return true;
         }
 
@@ -46,7 +51,7 @@ namespace DAL.Repo
             return db.Members.FirstOrDefault(m => m.Id == id);
         }
 
-        public bool Update(Member obj)
+        public   bool Update(Member obj)
         {
             var data = db.Members.FirstOrDefault(m => m.Id == obj.Id);
                  if (data != null)
@@ -56,6 +61,9 @@ namespace DAL.Repo
                 return true;
             }
             return false;
+
+
+           
         }
     }
 }

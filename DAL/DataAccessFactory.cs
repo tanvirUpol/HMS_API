@@ -30,7 +30,7 @@ namespace DAL
 
 
 
-        public static IRepo<Member, int, bool> GetMemberDataAccess()
+        public static  IRepo<Member, int, bool> GetMemberDataAccess()
         {
             return new MemberRepo(db);
         }

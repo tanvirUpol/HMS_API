@@ -32,8 +32,10 @@ namespace DAL.Repo
 
         public bool Delete(int id)
         {
-            var m = db.MealInfos.FirstOrDefault(db => db.Id == id);
-            db.MealInfos.Remove(m);
+           
+
+            db.MealInfos.Remove(Get(id));
+            db.SaveChanges();
             return true;
         }
 
