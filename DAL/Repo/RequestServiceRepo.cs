@@ -19,27 +19,45 @@ namespace DAL.Repo
 
         public bool Create(Request_Services obj)
         {
-            throw new NotImplementedException();
+            db.Request_Services.Add(obj);
+            var data = db.SaveChanges();
+
+            if (data != 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            
+            db.Request_Services.Remove(Get(id));
+            db.SaveChanges();
+            return true;
+
         }
 
         public List<Request_Services> Get()
         {
-            throw new NotImplementedException();
+            return db.Request_Services.ToList(); ;
         }
 
         public Request_Services Get(int id)
         {
-            throw new NotImplementedException();
+            return db.Request_Services.FirstOrDefault(m => m.Id == id);
         }
 
         public bool Update(Request_Services obj)
         {
-            throw new NotImplementedException();
+            var data = db.Request_Services.FirstOrDefault(m => m.Id == obj.Id);
+            if (data != null)
+            {
+                db.Entry(data).CurrentValues.SetValues(obj);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -45,6 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BOs\AdminModel.cs" />
+    <Compile Include="BOs\MealInfoModel.cs" />
+    <Compile Include="BOs\MemberModel.cs" />
+    <Compile Include="BOs\RequestServiceModel.cs" />
+    <Compile Include="BOs\StaffModel.cs" />
+    <Compile Include="BOs\StaffTaskModel.cs" />
     <Compile Include="BOs\HomeNoticeModel.cs" />
     <Compile Include="BOs\LoginModel.cs" />
     <Compile Include="BOs\MemberModel.cs" />
@@ -54,7 +59,6 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdminService.cs" />
-    <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\HomeNoticeServices.cs" />
     <Compile Include="Services\MemberService.cs" />
     <Compile Include="Services\StaffServices.cs" />
@@ -65,9 +69,6 @@
       <Project>{75b8af13-3c5f-4628-b054-063d535e8243}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
