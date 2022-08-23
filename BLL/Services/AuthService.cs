@@ -15,6 +15,7 @@ namespace BLL.Services
         {
             var admin = DataAccessFactory.GetAdminAuthDataAccess().Authenticate(id, pass);
             var staff = DataAccessFactory.GetStaffAuthDataAccess().Authenticate(id, pass);
+            var member = DataAccessFactory.GetMemberAuthDataAccess().Authenticate(id, pass);
             dynamic user = null;
             if(staff != null)
             {
@@ -23,6 +24,10 @@ namespace BLL.Services
             if (admin != null)
             {
                 user = admin;
+            }
+            if (member != null)
+            {
+                user = member;
             }
 
 

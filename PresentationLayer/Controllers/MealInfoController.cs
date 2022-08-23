@@ -1,5 +1,6 @@
 ﻿using BLL.BOs;
 using BLL.Services;
+using PresentationLayer.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace PresentationLayer.Controllers
 {
     public class MealInfoController : ApiController
     {
-
+        [ValidMember]
         [Route("api/meal/get")]
         [HttpGet]
 
@@ -25,7 +26,7 @@ namespace PresentationLayer.Controllers
         }
 
 
-
+        [ValidMember]
 
         [Route("api/meal/Create")]
         [HttpPost]
@@ -36,7 +37,7 @@ namespace PresentationLayer.Controllers
         }
 
 
-
+        [ValidMember]
 
         [Route("api/meal/update")]
         [HttpPost]
@@ -45,6 +46,8 @@ namespace PresentationLayer.Controllers
             var data = MealInfoServices.Update(m);
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
+
+        [ValidMember]
 
         [Route("api/meal/delete/{id}")]
         [HttpGet]

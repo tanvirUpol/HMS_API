@@ -53,6 +53,7 @@
     <Compile Include="BOs\LoginModel.cs" />
     <Compile Include="BOs\MemberModel.cs" />
     <Compile Include="BOs\StaffModel.cs" />
+    <Compile Include="BOs\TokenModel.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdminService.cs" />

@@ -103,6 +103,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Auth\ValidAdmin.cs" />
+    <Compile Include="Auth\ValidMember.cs" />
     <Compile Include="Auth\ValidStaff.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\MealInfoController.cs" />
