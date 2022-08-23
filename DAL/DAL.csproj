@@ -104,6 +104,10 @@
     <Compile Include="EF\sysdiagram.cs">
       <DependentUpon>HMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\Token.cs">
+      <DependentUpon>HMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interfces\IAuth.cs" />
     <Compile Include="Interfces\IRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\AdminRepo.cs" />
@@ -113,6 +117,7 @@
     <Compile Include="Repo\RequestServiceRepo.cs" />
     <Compile Include="Repo\StaffRepo.cs" />
     <Compile Include="Repo\StaffTaskRepo.cs" />
+    <Compile Include="Repo\TokenRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="EF\HMSModel.Context.tt">

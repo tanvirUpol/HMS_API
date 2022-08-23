@@ -11,6 +11,7 @@ namespace BLL.Services
 {
     public class AdminService
     {
+        
         public static List<AdminModel> Get()
         {
             var data = DataAccessFactory.GetAdminDataAccess().Get();

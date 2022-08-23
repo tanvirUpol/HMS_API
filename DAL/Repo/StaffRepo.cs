@@ -1,4 +1,5 @@
 ﻿using DAL.EF;
+using DAL.Interfaces;
 using DAL.Interfces;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,19 @@ using System.Threading.Tasks;
 
 namespace DAL.Repo
 {
-    public class StaffRepo : IRepo<Staff, int, bool>
+    public class StaffRepo : IRepo<Staff, int, bool>,IAuth<Staff>
     {
         HMS_APIEntities db = new HMS_APIEntities();
 
         public StaffRepo(HMS_APIEntities db)
         {
             this.db = db;
+        }
+
+        public Staff Authenticate(int id, string password)
+        {
+            return db.Staffs.FirstOrDefault(u => u.Id.Equals(id)
+           && u.Password.Equals(password));
         }
 
         public bool Create(Staff obj)
