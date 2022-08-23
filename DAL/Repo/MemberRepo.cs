@@ -1,4 +1,5 @@
 ﻿using DAL.EF;
+using DAL.Interfaces;
 using DAL.Interfces;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repo
 {
-    public class MemberRepo : IRepo<Member, int, bool>
+    public class MemberRepo : IRepo<Member, int, bool>,IAuth<Member>
     {
 
         HMS_APIEntities db = new HMS_APIEntities();
@@ -17,6 +18,13 @@ namespace DAL.Repo
         {
             this.db = db;
         }
+
+        public Member Authenticate(int id, string password)
+        {
+            return db.Members.FirstOrDefault(u => u.Id.Equals(id)
+           && u.Password.Equals(password));
+        }
+
         public bool Create(Member m)
         {
             db.Members.Add(m);

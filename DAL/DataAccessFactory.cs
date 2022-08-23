@@ -58,7 +58,10 @@ namespace DAL
         {
             return new StaffRepo(db);
         }
-
+        public static IAuth<Member> GetMemberAuthDataAccess()
+        {
+            return new MemberRepo(db);
+        }
         public static IRepo<Token, string, Token> GetTokenDataAccess()
         {
             return new TokenRepo(db);

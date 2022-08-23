@@ -1,17 +1,20 @@
 ﻿using BLL.BOs;
 using BLL.Services;
+using PresentationLayer.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using System.Web.Http.Cors;
 
 namespace PresentationLayer.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class MemberController : ApiController
     {
+        
         [Route("api/Member/get")]
         [HttpGet]
 
@@ -22,10 +25,10 @@ namespace PresentationLayer.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, data);
 
         }
-
+        [ValidMember]
         [Route("api/Member/get/{id}")]
         [HttpGet]
-        public HttpResponseMessage Get(int id)
+        public HttpResponseMessage Get(int id)   
         {
             var data = MemberService.Get(id);
             return Request.CreateResponse(HttpStatusCode.OK, data);
@@ -34,7 +37,7 @@ namespace PresentationLayer.Controllers
 
 
 
-
+       
         [Route("api/Member/Create")]
         [HttpPost]
         public HttpResponseMessage Create(MemberModel m)
@@ -45,7 +48,7 @@ namespace PresentationLayer.Controllers
 
 
 
-
+        [ValidMember]
         [Route("api/Member/update")]
         [HttpPost]
         public HttpResponseMessage Update(MemberModel m)
@@ -54,6 +57,7 @@ namespace PresentationLayer.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
+       
         [Route("api/Member/delete/{id}")]
         [HttpGet]
         public HttpResponseMessage Delete(int id)

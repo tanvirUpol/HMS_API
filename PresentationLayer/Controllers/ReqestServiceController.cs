@@ -1,5 +1,6 @@
 ﻿using BLL.BOs;
 using BLL.Services;
+using PresentationLayer.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace PresentationLayer.Controllers
 {
     public class ReqestServiceController : ApiController
     {
+        
+        [ValidMember]
         [Route("api/rq/get")]
         [HttpGet]
 
@@ -25,7 +28,7 @@ namespace PresentationLayer.Controllers
 
 
 
-
+        [ValidMember]
         [Route("api/rq/Create")]
         [HttpPost]
         public HttpResponseMessage Create(RequestServiceModel m)
@@ -36,7 +39,7 @@ namespace PresentationLayer.Controllers
 
 
 
-
+        [ValidMember]
         [Route("api/rq/update")]
         [HttpPost]
         public HttpResponseMessage Update(RequestServiceModel m)
@@ -45,6 +48,7 @@ namespace PresentationLayer.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
+        [ValidMember]
         [Route("api/rq/delete/{id}")]
         [HttpGet]
         public HttpResponseMessage Delete(int id)

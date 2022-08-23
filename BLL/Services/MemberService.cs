@@ -41,7 +41,7 @@ namespace BLL.Services
                     Gender = m.Gender,
                     Phone = m.Phone,
 
-                    Type = 2,
+                    Type = 3,
                     Room_Id = m.Room_Id
 
 
@@ -69,7 +69,7 @@ namespace BLL.Services
             rdata.Gender = m.Gender;
             rdata.Phone = m.Phone;
 
-            rdata.Type = 2;
+            rdata.Type = 3;
             rdata.Room_Id = m.Room_Id;
 
             return rdata;
@@ -96,7 +96,7 @@ namespace BLL.Services
                     Gender = m.Gender,
                     Phone = m.Phone,
 
-                    Type = 2,
+                    Type = 3,
                     Room_Id = m.Room_Id
 
 
@@ -134,7 +134,7 @@ namespace BLL.Services
                 Gender = m.Gender,
                 Phone = m.Phone,
 
-                Type = 2,
+                Type =3,
                 Room_Id = m.Room_Id
 
             };
@@ -187,7 +187,7 @@ namespace BLL.Services
                 Gender=m.Gender,
                 Phone= m.Phone,
 
-                Type = 2,
+                Type = 3,
                 Room_Id=m.Room_Id
 
             };
