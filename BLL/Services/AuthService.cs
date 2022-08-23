@@ -76,14 +76,14 @@ namespace BLL.Services
         }
 
 
-        public static bool TokenValidity(string token)
+        public static int TokenValidity(string token)
         {
             var tk = DataAccessFactory.GetTokenDataAccess().Get(token);
             if (tk != null && tk.ExpiredAt == null)
             {
-                return true;
+                return tk.Type;
             }
-            return false;
+            return 0;
 
         }
         public static bool Logout(TokenModel tk)

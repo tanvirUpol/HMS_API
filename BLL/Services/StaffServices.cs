@@ -61,7 +61,7 @@ namespace BLL.Services
                 Address = item.Address,
                 Phone = item.Phone,
                 Password = item.Password,
-                Type = item.Type,
+                Type = 2,
 
             };
             return DataAccessFactory.GetStaffDataAccess().Create(staff);

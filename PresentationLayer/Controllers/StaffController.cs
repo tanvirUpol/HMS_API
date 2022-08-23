@@ -1,5 +1,6 @@
 ﻿using BLL.BOs;
 using BLL.Services;
+using PresentationLayer.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace PresentationLayer.Controllers
 {
     public class StaffController : ApiController
     {
+        [ValidStaff]
         [Route("api/staff/get")]
         [HttpGet]
         public HttpResponseMessage Get()
