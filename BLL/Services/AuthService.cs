@@ -91,9 +91,9 @@ namespace BLL.Services
             return 0;
 
         }
-        public static bool Logout(TokenModel tk)
+        public static bool Logout(string Token1)
         {
-            var d_tk = DataAccessFactory.GetTokenDataAccess().Get(tk.Token1);
+            var d_tk = DataAccessFactory.GetTokenDataAccess().Get(Token1);
             d_tk.ExpiredAt = DateTime.Now;
             return DataAccessFactory.GetTokenDataAccess().Update(d_tk);
 

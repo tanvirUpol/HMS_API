@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace PresentationLayer.Controllers
 {
+    [EnableCors("*","*","*")]
     public class AuthController : ApiController
     {
         [Route("api/login")]
@@ -23,11 +25,17 @@ namespace PresentationLayer.Controllers
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }
         [Route("api/logout")]
-        [HttpPost]
-        public HttpResponseMessage Logout(TokenModel obj)
+        [HttpGet]
+        public HttpResponseMessage Logout()
         {
-            var data = AuthService.Logout(obj);
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+            var token = Request.Headers.Authorization.ToString();
+            if(token != null)
+            {
+                var data = AuthService.Logout(token);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            return Request.CreateResponse(HttpStatusCode.NotFound);
+
         }
     }
 }

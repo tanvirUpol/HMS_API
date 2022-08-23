@@ -36,7 +36,7 @@ namespace DAL.Repo
 
         public List<HomeNotice> Get()
         {
-            return db.HomeNotices.ToList();
+            return (from s in db.HomeNotices orderby s.Id descending select s).ToList();
         }
 
         public HomeNotice Get(int id)

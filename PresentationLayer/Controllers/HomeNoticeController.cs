@@ -20,6 +20,15 @@ namespace PresentationLayer.Controllers
 
         }
 
+        [Route("api/homenotice/get5")]
+        [HttpGet]
+        public HttpResponseMessage Get5()
+        {
+            var data = HomeNoticeServices.Get5();
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+
+        }
+
 
         [Route("api/homenotice/get/{id}")]
         [HttpGet]

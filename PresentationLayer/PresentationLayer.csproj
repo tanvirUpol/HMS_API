@@ -107,6 +107,7 @@
     <Compile Include="Auth\ValidStaff.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CalGroController.cs" />
+    <Compile Include="Controllers\EnableCrosAttribute.cs" />
     <Compile Include="Controllers\In_Out_NotesController.cs" />
     <Compile Include="Controllers\MealInfoController.cs" />
     <Compile Include="Controllers\MemberController.cs" />

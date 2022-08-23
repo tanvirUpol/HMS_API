@@ -22,7 +22,7 @@ namespace PresentationLayer.Auth
             else
             {
                 var rs = AuthService.TokenValidity(token.ToString());
-                if (rs == 1 || rs == 3)
+                if (rs == 1 || rs == 3 || rs == 0)
                 {
                     actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized, "Supplied token is invalid or expired");
                 }

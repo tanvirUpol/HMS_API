@@ -31,6 +31,26 @@ namespace BLL.Services
             return rdata;
         }
 
+        public static List<HomeNoticeModel> Get5()
+        {
+            var data = DataAccessFactory.GetHomeNoticeDataAccess().Get().Take(5);
+            var rdata = new List<HomeNoticeModel>();
+
+            foreach (var item in data)
+            {
+                rdata.Add(new HomeNoticeModel()
+                {
+                    Id = item.Id,
+                    Notice = item.Notice,
+
+
+
+                });
+
+            }
+            return rdata;
+        }
+
         public static HomeNoticeModel Get(int id)
         {
             var data = DataAccessFactory.GetHomeNoticeDataAccess().Get(id);
