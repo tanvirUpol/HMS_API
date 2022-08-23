@@ -48,5 +48,14 @@ namespace DAL
             return new HomeNoticeRepo(db);
         }
 
+        public static IRepo<In_Out_Notes, int, bool> GetIn_Out_NotesDataAccess()
+        {
+            return new In_Out_NotesRepo(db);
+        }
+        public static IRepo<CalGro, int, bool> GetCalGroDataAccess()
+        {
+            return new CalGroRepo(db);
+        }
+
     }
 }

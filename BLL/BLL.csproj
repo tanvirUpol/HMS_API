@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BOs\AdminModel.cs" />
+    <Compile Include="BOs\CalGroModel.cs" />
+    <Compile Include="BOs\In_Out_NotesModel.cs" />
     <Compile Include="BOs\MealInfoModel.cs" />
     <Compile Include="BOs\MemberModel.cs" />
     <Compile Include="BOs\RequestServiceModel.cs" />
@@ -57,6 +59,14 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdminService.cs" />
+    <Compile Include="Services\CalGroService.cs" />
+    <Compile Include="Services\HomeNoticeServices.cs" />
+    <Compile Include="Services\In_Out_NotesService.cs" />
+    <Compile Include="Services\MealInfoServices.cs" />
+    <Compile Include="Services\MemberService.cs" />
+    <Compile Include="Services\RequestServServices.cs" />
+    <Compile Include="Services\StaffServices.cs" />
+    <Compile Include="Services\StaffTaskServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
