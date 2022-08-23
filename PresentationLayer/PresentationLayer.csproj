@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,7 +44,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -54,6 +61,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -61,6 +71,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -80,17 +93,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Auth\ValidAdmin.cs" />
+    <Compile Include="Auth\ValidStaff.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CalGroController.cs" />
     <Compile Include="Controllers\In_Out_NotesController.cs" />
     <Compile Include="Controllers\MealInfoController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\ReqestServiceController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeNoticeController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\StaffTaskController.cs" />
@@ -110,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

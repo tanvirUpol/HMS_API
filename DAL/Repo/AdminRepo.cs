@@ -1,4 +1,5 @@
 ﻿using DAL.EF;
+using DAL.Interfaces;
 using DAL.Interfces;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repo
 {
-    public class AdminRepo : IRepo<Admin, int, bool>
+    public class AdminRepo : IRepo<Admin, int, bool>,IAuth<Admin>
     {
         HMS_APIEntities db = new HMS_APIEntities();
 
@@ -17,6 +18,13 @@ namespace DAL.Repo
         {
             this.db = db;
         }
+
+        public Admin Authenticate(int id, string password)
+        {
+            return db.Admins.FirstOrDefault(u => u.Id.Equals(id)
+            && u.Password.Equals(password));
+        }
+
         //this is create
         public bool Create(Admin obj)
         {

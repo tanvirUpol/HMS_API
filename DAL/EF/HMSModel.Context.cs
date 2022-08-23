@@ -38,5 +38,6 @@ namespace DAL.EF
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<StaffTask> StaffTasks { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
+        public DbSet<Token> Tokens { get; set; }
     }
 }

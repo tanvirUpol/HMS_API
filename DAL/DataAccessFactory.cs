@@ -1,4 +1,5 @@
 ﻿using DAL.EF;
+using DAL.Interfaces;
 using DAL.Interfces;
 using DAL.Repo;
 using System;
@@ -46,6 +47,21 @@ namespace DAL
         public static IRepo<HomeNotice, int, bool> GetHomeNoticeDataAccess()
         {
             return new HomeNoticeRepo(db);
+        }
+
+        public static IAuth<Admin> GetAdminAuthDataAccess()
+        {
+            return new AdminRepo(db);
+        } 
+        
+        public static IAuth<Staff> GetStaffAuthDataAccess()
+        {
+            return new StaffRepo(db);
+        }
+
+        public static IRepo<Token, string, Token> GetTokenDataAccess()
+        {
+            return new TokenRepo(db);
         }
 
         public static IRepo<In_Out_Notes, int, bool> GetIn_Out_NotesDataAccess()
